@@ -46,8 +46,19 @@ body {
     list-style-type: none;    
 }
 
-#myUL li {
+#myUL li:nth-child(odd) {
     display: inline-block;
+    border: 1px solid black;
+    background-color: orange;
+    text-align: center;
+    font-size: 13px;
+}
+#myUL li:nth-child(even) {
+    display: inline-block;
+    border: 1px solid black;
+    background-color: lightskyblue;
+    text-align: center;
+    font-size: 13px;
 }
 
 a {

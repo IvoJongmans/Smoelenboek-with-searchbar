@@ -73,7 +73,7 @@
     <div class="searchbar">
       <h4>searchbar:</h4>
       <input type="text" id="myInput" onkeyup="myFunction()"
-      placeholder="Zoek op naam.." title="Type in a name">
+      placeholder="Zoek op naam.." title="Tik een naam in..">
     </div>
     
     <br/>
@@ -92,11 +92,18 @@
   </div>
  
   <script>
+    //wordt aageroepen bij elke keer dat je een toets
+    //loslaat in het zoekveld
     function myFunction() {
+        //initialiseer variabelen
         var input, filter, ul, li, a, i, txtValue;
+        //stop de input in een variabele
         input = document.getElementById("myInput");
+        //waarde van input naar hoofdletters
         filter = input.value.toUpperCase();
+        //stop de ul in een variabele
         ul = document.getElementById("myUL");
+        
         li = ul.getElementsByTagName("li");
         for (i = 0; i < li.length; i++) {
             a = li[i].getElementsByTagName("a")[0];

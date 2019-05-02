@@ -106,12 +106,16 @@
         // maakt een collectie nodes met alle <li> elementen
         li = ul.getElementsByTagName("li");
         //itereer door lengte van var "li"
-        for (i = 0; i < li.length; i++) {
+        for (i = 0; i < li.length; i++) {            
             a = li[i].getElementsByTagName("a")[0];
+            //krijg alle tekst content uit de
             txtValue = a.textContent || a.innerText;
+            // if/else statement
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                //laat display value onaangetast
                 li[i].style.display = "";
             } else {
+                //zet display value op none
                 li[i].style.display = "none";
             }
         }

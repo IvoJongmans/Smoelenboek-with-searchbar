@@ -1,0 +1,52 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50px 200px 1fr 50px ;
+    grid-template-rows: 80px auto ;
+    grid-template-areas: " . header header . "
+                         " . toggles flexbox_container . "
+}
+
+
+.header {
+    grid-area: header;
+    text-align: center;
+}  
+
+.header h1 {
+    padding: 10px;
+}
+
+.toggle_container {
+    grid-area: toggles;
+}
+
+.flexbox_container {
+    grid-area: flexbox_container;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.api_item {
+    padding: 10px;
+    width: 150px;
+    height: 200px;
+}
+
+.span {
+    max-width: 150px;
+    max-height: 10px;
+}
+
+#myUL {
+    list-style-type: none;    
+}
+
+#myUL li {
+    display: inline-block;
+}
+    

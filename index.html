@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="HTML Blank">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="author" content="Ivo Jongmans">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>AJAX JQuery JSON</title>
+  <script>
+
+    $(document).ready(function(){   
+      $.ajax({
+          url: 'https://randomuser.me/api/?results=99',
+          dataType: 'json',
+          type: 'get',
+          success: function(data) {
+            $(data.results).each(function(index, element) {
+              console.log(element);
+              $("#myUL").append(`<li class="api_item ${element.gender} ${element.nat}">
+               <span>${element.name.first} ${element.name.last}</span> <br/>
+              <br>
+              <img src=${element.picture.large}>
+              </li>`);
+            });
+          }
+      });   
+    });
+
+    $(document).ready(function(){
+      $("#r1").click(function() {
+        $(".female").hide();
+        $(".male").show();
+      });
+      $("#r2").click(function() {
+        $(".male").hide();
+        $(".female").show();
+      });
+      $("#r3").click(function(){
+        $(".male, .female").show();
+      });
+    });
+
+
+    </script>
+
+</head>
+    
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1 id="h1">Random Smoeltjes</h1>
+    </div>
+
+  <div class="toggle_container">
+    <div id="toggle_gender_container">
+      <h4>geslacht:</h4>
+
+      <input type="radio" name="man_vrouw" id="r1"/>
+      <label for="r1">Man</label><br/>
+      <input type="radio" name="man_vrouw" id="r2"/>
+      <label for="r2">Vrouw</label><br/>
+      <input type="radio" name="man_vrouw" id="r3"/>
+      <label for="r3">Beide</label>    
+    </div>
+    <div class="searchbar">
+      <h4>searchbar:</h4>
+      <input type="text" id="myInput" onkeyup="myFunction()"
+      placeholder="Search for names.." title="Type in a name">
+    </div>
+    
+    <br/>
+
+  </div>
+
+  <div class="flexbox_container">
+    <ul id="myUL">
+
+    </ul>
+  </div>
+  
+
+     
+
+  </div>
+  
+ 
+  
+	
+  
+</body>
+    
+</html>

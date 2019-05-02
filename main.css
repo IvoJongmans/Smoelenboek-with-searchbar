@@ -4,7 +4,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 50px 200px 1fr 50px ;
+    grid-template-columns: 0px 120px 1fr 0px ;
     grid-template-rows: 80px auto ;
     grid-template-areas: " . header header . "
                          " . toggles flexbox_container . "

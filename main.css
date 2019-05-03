@@ -1,5 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: #3575D3;
+    color: white;
 }
 
 .container {
@@ -54,17 +56,21 @@ body {
 
 #myUL li:nth-child(odd) {
     display: inline-block;
-    border: 1px solid black;
-    background-color: orange;
+    border: 1px solid white;
+    background-color: #FFC300;
     text-align: center;
     font-size: 13px;
+    border-radius: 10px;
+    margin: 10px;
 }
 #myUL li:nth-child(even) {
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid white;
     background-color: lightskyblue;
     text-align: center;
     font-size: 13px;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 a {
@@ -72,3 +78,13 @@ a {
     color: black;
 }
     
+@media only screen and (max-width:750px) {
+    .container {
+        display: grid;
+        grid-template-columns: 10px 1fr 10px ;
+        grid-template-rows: 150px 100px auto ;
+        grid-template-areas: " .  header . "
+                             " . toggles . "
+                             " . flexbox_container . "
+    }
+}

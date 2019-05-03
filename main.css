@@ -4,10 +4,11 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 0px 120px 1fr 0px ;
-    grid-template-rows: 80px auto ;
-    grid-template-areas: " . header header . "
-                         " . toggles flexbox_container . "
+    grid-template-columns: 50px 1fr 50px ;
+    grid-template-rows: 80px 80px auto ;
+    grid-template-areas: " .  header . "
+                         " . toggles . "
+                         " . flexbox_container . "
 }
 
 
@@ -30,6 +31,11 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+#inner {
+    display: table;
+    margin: 0 auto;
+  }
 
 .api_item {
     padding: 10px;
